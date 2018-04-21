@@ -1,8 +1,20 @@
 {
-  "France": ["A0", "A1", "A2", "AA", "AH", "AN", "AR", "AS", "BA", "BJ", "BU", "DR", "DU", "DR", "DT", "CO", "CT", "CX", "ET", "FL", "LW", "MB", "MI", "NO", "RA", "RI", "SA", "SD", "SF", "SL", "SN", "SP", "SR", "TJ", "TH", "TN", "TR", "TS", "VI", "VX"],
-  "Germany": ["LP", "OL"],
-  "Italy": ["BC", "BO", "CE", "FO", "MA", "NZ", "OB", "PL", "RC", "RE", "SA", "TD"],
-  "Spain": ["BC", "CA", "LO", "LB", "LM", "LW", "GI", "UB"],
-  "Switzerland": ["DI", "FA"],
-  "USA": ["FC", "FH", "LA", "OS", "SD", "FL"]
+  "France": { 
+    "codes": ["A0", "A1", "A2", "AA", "AH", "AN", "AR", "AS", "BA", "BJ", "BU", "DR", "DU", "DR", "DT", "CO", "CT", "CX", "ET", "FL", "LW", "MB", "MI", "NO", "RA", "RI", "SA", "SD", "SF", "SL", "SN", "SP", "SR", "TJ", "TH", "TN", "TR", "TS", "VI", "VX"]
+    },
+  "Germany": { 
+    "codes": ["LP", "OL"]
+    },
+  "Italy": { 
+    "codes": ["BC", "BO", "CE", "FO", "MA", "NZ", "OB", "PL", "RC", "RE", "SA", "TD"]
+    },
+  "Spain": { 
+    "codes": ["BC", "CA", "LO", "LB", "LM", "LW", "GI", "UB"]
+    },
+  "Switzerland": { 
+    "codes": ["DI", "FA"]
+    },
+  "USA": { 
+    "codes": ["FC", "FH", "LA", "OS", "SD", "FL"]
+  }
 }
