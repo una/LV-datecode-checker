@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import factoryCodes from '../factoryCodes.json'
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -20,18 +21,35 @@ export default class Form extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.calculateDatecode(this.state.value)
-    
   }
 
   calculateDatecode(value) {
-    let year = '';
+    let year, month = '';
     let real = false;
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    // function to get the proper month
+    const getMonth = (n) => {
+      const month = n - 1;
+      return monthNames[month]
+    }
+
     // if value is only numbers, it was created in the early 1980's (ex. 836)
-    const early80s = new RegExp('^[0-9]{3}$')
+    const early80s = new RegExp('^[0-9]{3,4}$')
 
     if (early80s.test(value)) {
-      year = 'early 80s'
-      real = true
+      // check that it's the 80's
+      if (value.slice(0,1) === '8') {
+        // set year and month
+        year = `19${value.slice(0, 2)}`
+        if (value.length === 3) {
+          month = getMonth(value.slice(2, 3))
+        } else if (value.length === 4) {
+          month = getMonth(value.slice(2, 4))
+        }
+        real = true
+      }
     }
 
     // if value is 3-4 numbers followers by two letters, it's late 1980's (ex. 874VX)
@@ -49,7 +67,7 @@ export default class Form extends React.Component {
     }
 
     if (real) {
-      console.log(`This is a bag from ${year}`)
+      console.log(`The date code shows a production date of: ${month} ${year}`)
     } else {
       console.log('This is not a valid datecode')
     }
