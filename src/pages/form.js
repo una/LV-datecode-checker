@@ -74,6 +74,7 @@ export default class Form extends React.Component {
         }
         real = true
         renderResult()
+        return;
       }
     }
 
@@ -107,15 +108,43 @@ export default class Form extends React.Component {
         }
         real = true
         renderResult()
+        return;
       }
     }
 
     // if the value is 2 letters and 4 numbers, it's 1990+ (ex. VI1025 until 2007 and SD2057 after)
     const after80s = new RegExp('^[A-Z]{2}[0-9]{4}$')
     if (after80s.test(value)) {
-      year = 'after 80s'
-      real = true
+      const yearEnd = (value.slice(3,4)+value.slice(5,6));
+      if (yearEnd >= 90 ) {
+        year = 19 + yearEnd
+      } else {
+        year = 20+ yearEnd
+      }
+      if (1990 <= year <= 2006) {
+        const monthVal = value.slice(2,3)+value.slice(4,5)
+        // not accurate if month > 12
+        if (monthVal > 12) {
+          renderResult();
+          return
+        } else {
+          month = getMonth(monthVal)
+          real = true
+          renderResult()
+          return;
+        }
+      } else if (year >= 2007) {
+        const weekVal = value.slice(2,3)+value.slice(4,5)
+        // FINISH THIS AND SET IT TO WEEKS
+        month = weekVal + ' week'
+        real = true
+        renderResult()
+        return;
+      }
     }
+
+    // if its not one of the above it's not a valid date code
+    renderResult()
   }
 
   render() {
