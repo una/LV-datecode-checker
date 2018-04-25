@@ -121,7 +121,8 @@ export default class Form extends React.Component {
       } else {
         year = 20+ yearEnd
       }
-      if (1990 <= year <= 2006) {
+      if (year >= 1990 && year < 2007) {
+        console.log('yes')
         const monthVal = value.slice(2,3)+value.slice(4,5)
         // not accurate if month > 12
         if (monthVal > 12) {
@@ -135,11 +136,15 @@ export default class Form extends React.Component {
         }
       } else if (year >= 2007) {
         const weekVal = value.slice(2,3)+value.slice(4,5)
-        // FINISH THIS AND SET IT TO WEEKS
-        month = weekVal + ' week'
-        real = true
-        renderResult()
-        return;
+        if (weekVal > 52) {
+          renderResult();
+          return
+        } else {
+          month = weekVal + ' week'
+          real = true
+          renderResult()
+          return;
+        }
       }
     }
 
