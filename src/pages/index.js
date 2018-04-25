@@ -6,7 +6,7 @@ import {Helmet} from "react-helmet";
 export default () => <div className="container">
     <Helmet>
         <meta charSet="utf-8" />
-        <title>Louis Vuitton Datecode Calculator</title>
+        <title>Louis Vuitton Datecode Authenticator / Calculator</title>
         <meta name="description" content="A tool for checking Louis Vuitton date codes (also known as product codes) for authenticity. Do you want to check and see if that bag is real? Start by checking the date code."/>
         <meta name="keywords" content="Louis Vuitton, datecode, product code, code, product, date, checker, tool, handbags, authentication, authenticator, real, fake"/>
     </Helmet>

@@ -51,9 +51,7 @@ export default class Form extends React.Component {
 
     const renderResult = () => {
       if (real) {
-        this.state.message = `The date code shows a production date of: ${month} ${year}`
-      } if (country) {
-        this.state.message = `The item was produced in ${country}`
+        this.state.message = `The date code shows a production date of: ${month} ${year} in ${country}`
       } if (!real) {
         this.state.message = "This is not a valid datecode. Double check to make sure you haven't entered any additional characters (like spaces)"
       }
@@ -107,9 +105,6 @@ export default class Form extends React.Component {
             return
           }
         }
-        real = true
-        renderResult()
-        return;
       }
     }
 
@@ -140,7 +135,7 @@ export default class Form extends React.Component {
           renderResult();
           return
         } else {
-          month = weekVal + ' week'
+          month = weekVal + 'th week of'
           real = true
           renderResult()
           return;
