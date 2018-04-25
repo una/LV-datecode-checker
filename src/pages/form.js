@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import factoryCodes from '../factoryCodes.json'
+import style from '../style/main.css'
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -50,11 +51,11 @@ export default class Form extends React.Component {
 
     const renderResult = () => {
       if (real) {
-        console.log(`The date code shows a production date of: ${month} ${year}`)
+        this.state.message = `The date code shows a production date of: ${month} ${year}`
       } if (country) {
-        console.log(`The item was produced in ${country}`)
+        this.state.message = `The item was produced in ${country}`
       } if (!real) {
-        console.log('This is not a valid datecode')
+        this.state.message = "This is not a valid datecode. Double check to make sure you haven't entered any additional characters (like spaces)"
       }
       this.setState({ hasResult: true });
     }
@@ -122,7 +123,6 @@ export default class Form extends React.Component {
         year = 20+ yearEnd
       }
       if (year >= 1990 && year < 2007) {
-        console.log('yes')
         const monthVal = value.slice(2,3)+value.slice(4,5)
         // not accurate if month > 12
         if (monthVal > 12) {
@@ -155,7 +155,7 @@ export default class Form extends React.Component {
   render() {
     const result = this.state.hasResult ? (
       <div>
-        <h3>For Datecode {this.state.value}:</h3>
+        <h3>{this.state.value}:</h3>
         <p>{this.state.message}</p>
       </div>
     ) : (
@@ -166,8 +166,8 @@ export default class Form extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Datecode:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            Product Code: 
+            <input placeholder="Enter code here" type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
