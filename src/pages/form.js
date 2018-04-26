@@ -27,8 +27,7 @@ export default class Form extends React.Component {
   calculateDatecode(value) {
     let year, month, country = '';
     let real = false;
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
-    ];
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     // function to get the proper month
     const getMonth = (n) => {
@@ -43,6 +42,12 @@ export default class Form extends React.Component {
       for (let key in factoryCodes) {
         if (factoryCodes[key].codes.includes(code)) {
           real = true
+          if (code === 'BC') {
+            return 'Spain or Italy'
+          }
+          if (code == 'SA') {
+            return 'France or Italy'
+          }
           return key
         }
       }
@@ -50,8 +55,10 @@ export default class Form extends React.Component {
     }
 
     const renderResult = () => {
-      if (real) {
+      if (real && country !== '') {
         this.state.message = `The date code shows a production date of: ${month} ${year} in ${country}`
+      } else if (real && country === '') {
+        this.state.message = `The date code shows a production date of: ${month} ${year}`
       } if (!real) {
         this.state.message = "This is not a valid datecode. Double check to make sure you haven't entered any additional characters (like spaces)"
       }
@@ -89,6 +96,9 @@ export default class Form extends React.Component {
           // check if the country is valid
           if (getCountry(value.slice(3, 5))) {
             country = getCountry(value.slice(3, 5))
+            real = true
+            renderResult()
+            return
           } else {
             real = false
             renderResult()
@@ -99,6 +109,9 @@ export default class Form extends React.Component {
           // check if the country is valid
           if (getCountry(value.slice(4, 6))) {
             country = getCountry(value.slice(4, 6))
+            real = true
+            renderResult()
+            return
           } else {
             real = false
             renderResult()
@@ -115,7 +128,7 @@ export default class Form extends React.Component {
       if (yearEnd >= 90 ) {
         year = 19 + yearEnd
       } else {
-        year = 20+ yearEnd
+        year = 20 + yearEnd
       }
       if (year >= 1990 && year < 2007) {
         const monthVal = value.slice(2,3)+value.slice(4,5)
@@ -125,9 +138,17 @@ export default class Form extends React.Component {
           return
         } else {
           month = getMonth(monthVal)
-          real = true
-          renderResult()
-          return;
+          if (getCountry(value.slice(0, 2))) {
+            country = getCountry(value.slice(0, 2))
+            console.log(value.slice(0, 2))
+            real = true
+            renderResult()
+            return;
+          } else {
+            real = false
+            renderResult()
+            return
+          }
         }
       } else if (year >= 2007) {
         const weekVal = value.slice(2,3)+value.slice(4,5)
@@ -136,9 +157,17 @@ export default class Form extends React.Component {
           return
         } else {
           month = weekVal + 'th week of'
-          real = true
-          renderResult()
-          return;
+          if (getCountry(value.slice(0, 2))) {
+            country = getCountry(value.slice(0, 2))
+            console.log(value.slice(0, 2))
+            real = true
+            renderResult()
+            return;
+          } else {
+            real = false
+            renderResult()
+            return
+          }
         }
       }
     }
@@ -166,7 +195,9 @@ export default class Form extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        {result}
+        <div className="result">
+          {result}
+        </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 {
   "France": { 
-    "codes": ["A0", "A1", "A2", "AA", "AH", "AN", "AR", "AS", "BA", "BJ", "BU", "DR", "DU", "DR", "DT", "CO", "CT", "CX", "ET", "FL", "LW", "MB", "MI", "NO", "RA", "RI", "SA", "SD", "SF", "SL", "SN", "SP", "SR", "TJ", "TH", "TN", "TR", "TS", "VI", "VX"]
+    "codes": ["A0", "A1", "A2", "AA", "AH", "AN", "AR", "AS", "BA", "BJ", "BU", "DR", "DU", "DT", "CO", "CT", "CX", "ET", "FL", "LW", "MB", "MI", "NO", "RA", "RI", "SA", "SD", "SF", "SL", "SN", "SP", "SR", "TJ", "TH", "TN", "TR", "TS", "VI", "VX"]
     },
   "Germany": { 
     "codes": ["LP", "OL"]

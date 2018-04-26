@@ -30,14 +30,14 @@ body {
 
 .secondary {
   width: 200px;
-  background: var(--colorRose);
-  border: 1px solid var(--colorPrimary);
   margin: 1rem 0;
   text-align: center;
 }
 
-h4 {
+.secondary h4 {
   margin-bottom: -0.5rem;
+  font-size: 0.8rem;
+  padding: 0 1rem;
 }
 
 iframe {
@@ -61,4 +61,13 @@ form {
 
 input {
   margin-left: 1rem;
+}
+
+.result {
+  height: 8rem;
+}
+
+a {
+  color: rgb(226, 21, 124);
+  font-weight: 800;
 }
