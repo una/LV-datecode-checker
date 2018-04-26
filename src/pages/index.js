@@ -16,8 +16,7 @@ export default () => <div className="container">
         <h4>Notice: When buying bags on the secondhand market, make sure the details provided by the seller match the details of the date code. Checking the date code is an easy way to determine if a bag is fake, however this is not the only method. While this is a good start, seek the opinion of a professional when in doubt.</h4>
         <p className="aside">*If you see Factory Code "AAS", this is a special order and not included in the calculator.</p>
         <Form />
-        <small>Like this project? Show your support and help me fund my first LV bag <a href="https://www.paypal.me/UnaKravets">here 😊!</a></small>
- 
+
     </div>
     <div className="secondary">
         <h4>Organize &amp; protect your bags:</h4>
