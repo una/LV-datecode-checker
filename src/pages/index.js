@@ -2,6 +2,7 @@ import React from "react"
 import Form from './form'
 import style from '../style/main.css'
 import {Helmet} from "react-helmet";
+import ReactGA from 'react-ga';
 
 export default () => <div className="container">
     <Helmet>
@@ -9,6 +10,10 @@ export default () => <div className="container">
         <title>Louis Vuitton Datecode Authenticator / Calculator</title>
         <meta name="description" content="A tool for checking Louis Vuitton date codes (also known as product codes) for authenticity. Do you want to check and see if that bag is real? Start by checking the date code."/>
         <meta name="keywords" content="Louis Vuitton, datecode, product code, code, product, date, checker, tool, handbags, authentication, authenticator, real, fake"/>
+        <script>
+            ReactGA.initialize('UA-36758177-11');
+            ReactGA.pageview(window.location.pathname + window.location.search);
+        </script>
     </Helmet>
     <div className="main">
         <h1>Louis Vuitton Product Code Calculator</h1>
