@@ -2,7 +2,6 @@ import React from "react"
 import Form from './form'
 import style from '../style/main.css'
 import {Helmet} from "react-helmet";
-import ReactGA from 'react-ga';
 
 export default () => <div className="container">
     <Helmet>
@@ -10,10 +9,6 @@ export default () => <div className="container">
         <title>Louis Vuitton Datecode Authenticator / Calculator</title>
         <meta name="description" content="A tool for checking Louis Vuitton date codes (also known as product codes) for authenticity. Do you want to check and see if that bag is real? Start by checking the date code."/>
         <meta name="keywords" content="Louis Vuitton, datecode, product code, code, product, date, checker, tool, handbags, authentication, authenticator, real, fake"/>
-        <script>
-            ReactGA.initialize('UA-36758177-11');
-            ReactGA.pageview(window.location.pathname + window.location.search);
-        </script>
     </Helmet>
     <div className="main">
         <h1>Louis Vuitton Product Code Calculator</h1>
@@ -31,4 +26,13 @@ export default () => <div className="container">
         <h4>Keep them healthy &amp; happy:</h4>
         <iframe scrolling="no" frameBorder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=unakravets-20&marketplace=amazon&region=US&placement=B00HU6N3LK&asins=B00HU6N3LK&linkId=980a5e5d7bda0e4b7c6bf92c7d534167&show_border=true&link_opens_in_new_window=true"/>
     </div>
+    <script dangerouslySetInnerHTML={{
+        __html: `
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-36758177-11', 'auto');
+            ga('send', 'pageview');`
+    }} />
 </div>
