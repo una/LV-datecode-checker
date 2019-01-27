@@ -71,3 +71,29 @@ a {
   color: rgb(226, 21, 124);
   font-weight: 800;
 }
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    margin-right: 0;
+  }
+
+  .container {
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .secondary {
+    margin: 0;
+    display: flex;
+    width: 100%;
+  }
+}
