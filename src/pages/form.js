@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import factoryCodes from '../factoryCodes.json'
-import style from '../style/main.css'
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -45,7 +44,7 @@ export default class Form extends React.Component {
           if (code === 'BC') {
             return 'Spain or Italy'
           }
-          if (code == 'SA') {
+          if (code === 'SA') {
             return 'France or Italy'
           }
           return key
@@ -56,11 +55,11 @@ export default class Form extends React.Component {
 
     const renderResult = () => {
       if (real && country !== '') {
-        this.state.message = `The date code shows a production date of: ${month} ${year} in ${country}`
+        this.state.message = `The date code indicates a production date of: ${month} ${year} in ${country}`
       } else if (real && country === '') {
-        this.state.message = `The date code shows a production date of: ${month} ${year}`
+        this.state.message = `The date code indicates a production date of: ${month} ${year}`
       } if (!real) {
-        this.state.message = "This is not a valid datecode. Double check to make sure you haven't entered any additional characters (like spaces)"
+        this.state.message = "This indicates an invalid datecode. Double check to make sure you haven't entered any additional characters (like spaces)."
       }
       this.setState({ hasResult: true });
     }
@@ -85,7 +84,7 @@ export default class Form extends React.Component {
     }
 
     // if value is 3-4 numbers followers by two letters, it's late 1980's (ex. 874VX)
-    const mid80s = new RegExp('^[0-9]{3,4}[A-Z][A-Z]$')
+    const mid80s = new RegExp('^[0-9]{3,4}[A-Za-z][A-Za-z]$')
     if (mid80s.test(value)) {
       // check that it's the 80's
       if (value.slice(0, 1) === '8') {
@@ -122,7 +121,7 @@ export default class Form extends React.Component {
     }
 
     // if the value is 2 letters and 4 numbers, it's 1990+ (ex. VI1025 until 2007 and SD2057 after)
-    const after80s = new RegExp('^[A-Z]{2}[0-9]{4}$')
+    const after80s = new RegExp('^[A-Za-z]{2}[0-9]{4}$')
     if (after80s.test(value)) {
       const yearEnd = (value.slice(3,4)+value.slice(5,6));
       if (yearEnd >= 90 ) {
@@ -140,7 +139,6 @@ export default class Form extends React.Component {
           month = getMonth(monthVal)
           if (getCountry(value.slice(0, 2))) {
             country = getCountry(value.slice(0, 2))
-            console.log(value.slice(0, 2))
             real = true
             renderResult()
             return;
@@ -159,7 +157,6 @@ export default class Form extends React.Component {
           month = weekVal + 'th week of'
           if (getCountry(value.slice(0, 2))) {
             country = getCountry(value.slice(0, 2))
-            console.log(value.slice(0, 2))
             real = true
             renderResult()
             return;

@@ -7,17 +7,24 @@ export default () => <div className="container">
     <Helmet>
         <meta charSet="utf-8" />
         <title>Louis Vuitton Datecode Authenticator / Calculator</title>
-        <meta name="description" content="A tool for checking Louis Vuitton date codes (also known as product codes) for authenticity. Do you want to check and see if that bag is real? Start by checking the date code."/>
-        <meta name="keywords" content="Louis Vuitton, datecode, product code, code, product, date, checker, tool, handbags, authentication, authenticator, real, fake"/>
+        <meta name="description" content="A tool for checking Louis Vuitton date codes (also known as product codes) for authenticity. Do you want to check and see if that bag is real? Start by checking the date code. This is the place to help you authenticate your Louis Vuitton bag purchase from the second hand market."/>
+        <meta name="keywords" content="Louis Vuitton, authenticate, authentic, date code, datecode, product code, code, product, date, checker, tool, handbags, authentication, authenticator, real, fake"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script dangerouslySetInnerHTML={{
+        __html: `
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8894892383863897",
+          enable_page_level_ads: true
+        });`
+    }} />
     </Helmet>
     <div className="main">
         <h1>Louis Vuitton Product Code Calculator</h1>
         <h2>Louis Vuitton starting using product codes in the early 1980's. Use this page to figure out where and when your bag was made!</h2>
-        <h4>Notice: When buying bags on the secondhand market, make sure the details provided by the seller match the details of the date code. Checking the date code is an easy way to determine if a bag is fake, however this is not the only method. While this is a good start, seek the opinion of a professional when in doubt.</h4>
+        <h4>Notice: When buying bags on the secondhand market, make sure the details provided by the seller match the details of the date code. Checking the date code is one way to determine if a bag is fake, however this is not the only method. While this is a good start, seek the opinion of a professional when in doubt. This site does not guarantee accuracy of results.</h4>
         <p className="aside">*If you see Factory Code "AAS", this is a special order and not included in the calculator.</p>
         <Form />
-
     </div>
     <ul className="secondary">
         <li>
