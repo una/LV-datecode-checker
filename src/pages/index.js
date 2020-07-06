@@ -11,9 +11,7 @@ export default () => <div className="container">
         <meta name="keywords" content="Louis Vuitton, LV, authenticate, authentic, date code, datecode, product code, code, product, date, checker, tool, handbags, authentication, authenticator, real, fake"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script dangerouslySetInnerHTML={{
-        __html: `<script data-ad-client="ca-pub-8894892383863897" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>`
-        }} />
+        <script data-ad-client="ca-pub-8894892383863897" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </Helmet>
     <div className="main">
         <h1>Louis Vuitton Product Code Authenticator</h1>
