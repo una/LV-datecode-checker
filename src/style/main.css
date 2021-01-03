@@ -41,11 +41,15 @@ body {
 }
 
 iframe {
-  display: block;
+  display: inline-block;
   margin: 1rem auto;
   width: 120px;
   height: 240px;
   border: none;
+}
+
+.roll iframe {
+  margin-right: 1rem;
 }
 
 form,
@@ -59,12 +63,22 @@ form {
   padding: 1rem;
 }
 
-input {
-  margin-left: 1rem;
+@media screen and (min-width: 696px) {
+  [type="text"] {
+    margin-left: 1rem;
+  }
 }
 
-.result {
-  height: 8rem;
+[type="submit"] {
+  margin: 1rem 0;
+}
+
+.result:not(:empty) {
+  color: rgb(226, 21, 124);
+  background: #ffebd1;
+  padding: 1rem;
+  border: 2px dashed;
+  margin: 1rem 0;
 }
 
 a {

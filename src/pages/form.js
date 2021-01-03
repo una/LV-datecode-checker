@@ -42,10 +42,19 @@ export default class Form extends React.Component {
         if (factoryCodes[key].codes.includes(code)) {
           real = true
           if (code === 'BC') {
-            return 'Spain or Italy'
+            return 'Italy, or Spain (after 2015)'
           }
           if (code === 'SA') {
             return 'France or Italy'
+          }
+          if (code === 'LA') {
+            return 'the United States, or France (after 2019)'
+          }
+          if (code === 'LM') {
+            return 'the United States, or France (after 2019)'
+          }
+          if (code === 'SD') {
+            return 'France or the United States (after 1995)'
           }
           return key
         }
