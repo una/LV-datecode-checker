@@ -15,7 +15,7 @@ export default () => <div className="container">
     </Helmet>
     <div className="main">
         <h1>Louis Vuitton Product Code Authenticator</h1>
-        <h2>Louis Vuitton starting using product codes in the early 1980's. Use this page to figure out where and when your bag was made!</h2>
+        <h2>Louis Vuitton started using product codes in the early 1980's. Use this page to figure out where and when your bag was made!</h2>
         <h4>Notice: When buying bags on the pre-loved market, make sure the details provided by the seller match the details of the date code. Checking the date code is one way to determine if a bag is fake, however this is not the only method. While this is a good start, a bag could have a valid datecode while being inauthentic. Seek the opinion of a professional when in doubt. This site does not guarantee accuracy of results.</h4>
         <p className="aside">*If you see Factory Code "AAS", this is a special order and not included in the calculator.</p>
         <p><em>The calculator was last updated January 2021 to reflect new factory openings and closings.</em></p>
