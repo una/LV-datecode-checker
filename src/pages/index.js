@@ -3,7 +3,8 @@ import Form from './form'
 import style from '../style/main.css'
 import {Helmet} from "react-helmet";
 
-export default () => <div className="container">
+export default () => 
+<div>
     <Helmet>
         <meta charSet="utf-8" />
         <title>Louis Vuitton Datecode Authenticator / Calculator</title>
@@ -13,6 +14,8 @@ export default () => <div className="container">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script data-ad-client="ca-pub-8894892383863897" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </Helmet>
+    <header>Check out our new sister site for Chanel Bags, <a href="https://chanelcodecalc.com">chanelcodecalc.com</a>.</header>    
+    <div className="container">
     <div className="main">
         <h1>Louis Vuitton Product Code Authenticator</h1>
         <h2>Louis Vuitton started using product codes in the early 1980's. Use this page to figure out where and when your bag was made!</h2>
@@ -81,4 +84,5 @@ export default () => <div className="container">
             ga('create', 'UA-36758177-11', 'auto');
             ga('send', 'pageview');`
     }} />
+    </div>
 </div>
